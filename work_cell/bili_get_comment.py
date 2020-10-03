@@ -7,8 +7,8 @@ import time
 import datetime
 headers = {"User-Agent": UserAgent(verify_ssl=False).random}
 comment_api = 'https://bangumi.bilibili.com/review/web_api/short/list?media_id=102392&folded=0&page_size=20&sort=0'
-
-requests.adapters.DEFAULT_RETRIES = 5  # 增加重连次数
+RETRIES = 5
+requests.adapters.DEFAULT_RETRIES = RETRIES  # 增加重连次数
 s = requests.session()
 s.keep_alive = False  # 关闭多余连接
 s.get(url=comment_api)  # 你需要的网址
@@ -45,7 +45,7 @@ while j < total:
 
         # 每一个json路径中cursor值就藏在前一个json的最后一条评论中
         data_all.loc[j, 'cursor'] = json_comment['result']['list'][n-1]['cursor']
-        j+=1
+        j += 1
     try:
         # 'last_ep_index',用户当前的看剧状态，比如看至第13话，第6话之类
         data_all.loc[j, 'last_ep_index'] = json_comment['result']['list']['i']['user_season']['last_ep_index']
