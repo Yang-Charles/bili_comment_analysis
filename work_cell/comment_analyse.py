@@ -116,8 +116,7 @@ text_cloud = dict(keywords)
 pd.DataFrame(keywords).to_excel('TF_IDF关键词前500.xlsx')
 
 bg = plt.imread("血小板.jpg")
-# 生成
-wc = WordCloud(  # FFFAE3
+wc = WordCloud(
     background_color="white",  # 设置背景为白色，默认为黑色
     width=400,  # 设置图片的宽度
     height=600,  # 设置图片的高度
@@ -126,7 +125,6 @@ wc = WordCloud(  # FFFAE3
     max_font_size=500,  # 显示的最大的字体大小
     font_path="STSONG.TTF",
 ).generate_from_frequencies(text_cloud)
-# 为图片设置字体
 
 # 图片背景
 # bg_color = ImageColorGenerator(bg)

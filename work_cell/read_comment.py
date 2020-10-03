@@ -1,5 +1,5 @@
 import pandas as pd
-# data = pd.read_csv('bilibilib_gzxb.csv', usecols=[0, 1, 3, 4, 7])
+
 data = pd.read_csv('../data/bilibilib_gzxb.csv')
 print(data.head())
 
