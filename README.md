@@ -1,6 +1,5 @@
+# 哔哩哔哩用户评论爬取及分析
 ##Data source
-哔哩哔哩用户评论
-
 bili_get_comment.py
 
 ## Data analysis
